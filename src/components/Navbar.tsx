@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LogOut, ShoppingBag, LayoutDashboard, ClipboardList, MapPin, Gift, BarChart3 } from 'lucide-react';
+import { LogOut, ShoppingBag, LayoutDashboard, ClipboardList, MapPin, Gift, BarChart3, Truck } from 'lucide-react';
 
 const Navbar = () => {
   const { isAuthenticated, isAdmin, user, logout } = useAuth();
@@ -45,6 +45,10 @@ const Navbar = () => {
                     <Link to="/admin/rewards" className="flex items-center text-gray-400 hover:text-gold-400 font-medium text-sm transition-colors">
                       <Gift className="h-4 w-4 mr-1" />
                       Recompensas
+                    </Link>
+                    <Link to="/proveedores" className="flex items-center text-gray-400 hover:text-gold-400 font-medium text-sm transition-colors">
+                      <Truck className="h-4 w-4 mr-1" />
+                      Proveedores
                     </Link>
                   </>
                 )}

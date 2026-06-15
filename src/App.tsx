@@ -24,6 +24,8 @@ import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
 import DeliveryZonesAdmin from './pages/DeliveryZonesAdmin';
 import RewardsAdmin from './pages/RewardsAdmin';
+import ProveedorList from './pages/ProveedorList';
+import ProveedorForm from './pages/ProveedorForm';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -76,6 +78,9 @@ const AppRoutes = () => (
     <Route path="/promotions" element={<AdminRoute><Layout><PromotionList /></Layout></AdminRoute>} />
     <Route path="/promotions/new" element={<AdminRoute><Layout><PromotionForm /></Layout></AdminRoute>} />
     <Route path="/promotions/edit/:id" element={<AdminRoute><Layout><PromotionForm /></Layout></AdminRoute>} />
+    <Route path="/proveedores" element={<AdminRoute><Layout><ProveedorList /></Layout></AdminRoute>} />
+    <Route path="/proveedor/new" element={<AdminRoute><Layout><ProveedorForm /></Layout></AdminRoute>} />
+    <Route path="/proveedor/edit/:id" element={<AdminRoute><Layout><ProveedorForm /></Layout></AdminRoute>} />
     <Route path="*" element={<Navigate to="/" />} />
   </Routes>
 );
